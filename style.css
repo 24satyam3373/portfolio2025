@@ -381,6 +381,8 @@ section {
   aspect-ratio: 1;
   border-radius: var(--radius-xl);
   overflow: visible;
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
 
 .img-wrapper img.profile-blob {
@@ -395,6 +397,7 @@ section {
   z-index: 2;
   animation: morphingBlob 8s ease-in-out infinite alternate;
   background-color: #fff; /* Since it's a jpeg with white bg, it'll blend perfectly */
+  transform: translateZ(50px);
 }
 
 @keyframes morphingBlob {
@@ -412,6 +415,7 @@ section {
   filter: blur(40px);
   z-index: 1;
   animation: pulseGlow 3s ease-in-out infinite;
+  transform: translateZ(-30px);
 }
 
 @keyframes pulseGlow {
@@ -450,8 +454,8 @@ section {
 }
 
 @keyframes floatBadge {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-8px); }
+  0%, 100% { transform: translateZ(80px) translateY(0); }
+  50%       { transform: translateZ(80px) translateY(-8px); }
 }
 
 /* ─── About Section ──────────────────────────────────── */
