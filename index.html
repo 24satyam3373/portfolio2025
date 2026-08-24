@@ -89,9 +89,18 @@
     </div>
 
     <div class="home-image">
-      <div class="img-wrapper tilt-card" id="heroTilt">
-        <div class="img-glow"></div>
-        <img src="avatar.jpg" alt="Satyam Kumar Raj" class="modern-profile" />
+      <div class="hero-img-container" id="heroTilt">
+        <!-- Rotating gradient ring -->
+        <div class="ring ring-1"></div>
+        <div class="ring ring-2"></div>
+        <!-- Floating orbs -->
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <!-- Main photo frame -->
+        <div class="hero-photo-frame">
+          <img src="avatar.jpg" alt="Satyam Kumar Raj" class="hero-photo" />
+        </div>
+        <!-- Floating Badges -->
         <div class="img-badge badge-1"><i class='bx bx-code-alt'></i> Full Stack</div>
         <div class="img-badge badge-2">⚡ Open to Work</div>
       </div>
@@ -107,8 +116,16 @@
 
     <div class="about-grid">
       <div class="about-image reveal-left">
-        <div class="about-img-wrap tilt-card">
-          <img src="avatar.jpg" alt="Satyam Kumar Raj" class="about-profile-pic" />
+        <div class="about-img-frame tilt-card">
+          <div class="about-corner about-corner-tl"></div>
+          <div class="about-corner about-corner-br"></div>
+          <div class="about-img-inner">
+            <img src="avatar.jpg" alt="Satyam Kumar Raj" class="about-photo" />
+          </div>
+          <div class="about-exp-tag">
+            <span class="exp-num">2+</span>
+            <span class="exp-txt">Years<br/>Experience</span>
+          </div>
         </div>
       </div>
 
