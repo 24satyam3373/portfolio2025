@@ -377,27 +377,35 @@ section {
 
 .img-wrapper {
   position: relative;
-  width: min(420px, 90vw);
+  width: min(400px, 90vw);
   aspect-ratio: 1;
-  border-radius: var(--radius-xl);
+  border-radius: 50%;
   overflow: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   transform-style: preserve-3d;
   perspective: 1000px;
 }
 
 .img-wrapper img.modern-profile {
-  width: 100%;
-  height: 100%;
+  width: 95%;
+  height: 95%;
   object-fit: cover;
-  object-position: center; /* Better for selfies */
-  border-radius: 32px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  object-position: center;
+  border-radius: 50%;
   position: relative;
   z-index: 2;
-  background-color: var(--card-bg);
-  transform: translateZ(40px);
-  filter: contrast(1.05) saturate(1.1);
+  filter: grayscale(100%) contrast(1.1);
+  transition: filter 0.5s ease;
+  transform: translateZ(20px);
+}
+
+.img-wrapper:hover img.modern-profile {
+  filter: grayscale(0%) contrast(1.05);
 }
 
 @keyframes morphingBlob {
@@ -472,43 +480,37 @@ section {
 
 .about-img-wrap {
   position: relative;
-  border-radius: 24px;
+  border-radius: 50%;
   overflow: visible;
   width: 100%;
   max-width: 380px;
+  aspect-ratio: 1;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   transform-style: preserve-3d;
   perspective: 1000px;
 }
 
-.about-img-wrap::before {
-  content: '';
-  position: absolute;
-  inset: 15px -15px -15px 15px;
-  border: 2px solid var(--accent-neon);
-  border-radius: 24px;
-  z-index: 0;
-  transition: all 0.4s ease;
-  transform: translateZ(-10px);
-}
-
-.about-img-wrap:hover::before {
-  inset: 20px -20px -20px 20px;
-}
-
 .about-img-wrap img.about-profile-pic {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4/5;
+  width: 95%;
+  height: 95%;
   object-fit: cover;
   object-position: center;
-  border-radius: 24px;
+  border-radius: 50%;
   position: relative;
   z-index: 1;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  filter: contrast(1.05) saturate(1.1);
-  transform: translateZ(30px);
+  filter: grayscale(100%) contrast(1.1);
+  transition: filter 0.5s ease;
+  transform: translateZ(20px);
+}
+
+.about-img-wrap:hover img.about-profile-pic {
+  filter: grayscale(0%) contrast(1.05);
 }
 
 .about-content h3 {
